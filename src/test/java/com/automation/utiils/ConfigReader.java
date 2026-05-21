@@ -18,6 +18,7 @@ public class ConfigReader {
          }
     }
 
+    // This is my line for demo purposes
     public static String getProperty(String key) {
         // Return the value of the specified property key
         // You can implement this method to return the value from the loaded properties
