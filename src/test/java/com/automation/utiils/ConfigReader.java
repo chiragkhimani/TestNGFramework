@@ -23,6 +23,6 @@ public class ConfigReader {
         // Return the value of the specified property key
         // You can implement this method to return the value from the loaded properties
         return properties.getProperty(key); // Placeholder return statement
-        //great projecy
+        //great project
     }
 }
