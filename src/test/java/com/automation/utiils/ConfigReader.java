@@ -17,7 +17,7 @@ public class ConfigReader {
              ex.printStackTrace();
          }
     }
-
+//This is my file for demo purpose
     public static String getProperty(String key) {
         // Return the value of the specified property key
         // You can implement this method to return the value from the loaded properties
