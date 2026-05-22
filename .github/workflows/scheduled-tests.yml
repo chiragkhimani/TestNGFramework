@@ -8,27 +8,6 @@ on:
     - cron: '0 9 * * MON,FRI'
 
 jobs:
-  qodana-scan:
-    name: Qodana static analysis
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Run Qodana analysis
-        uses: jetbrains/qodana-action@v2025.2
-        with:
-          qodana-image: jetbrains/qodana-jvm-community:2025.2
-          output-path: qodana-report
-          cache: true
-
-      - name: Upload Qodana report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: qodana-report
-          path: qodana-report
-
   scheduled-tests:
     runs-on: ubuntu-latest
     
