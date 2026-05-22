@@ -44,13 +44,6 @@ jobs:
       - name: Run automation tests
         run: mvn test
       
-      - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2
-        if: always()
-        with:
-          files: target/surefire-reports/TEST-*.xml
-          check_name: TestNG Automation Test Results
-      
       - name: Upload test reports
         if: always()
         uses: actions/upload-artifact@v4
