@@ -18,7 +18,7 @@ jobs:
       - name: Install system dependencies for Chrome
         run: |
           sudo apt-get update
-          sudo apt-get install -y libnss3 libgconf-2-4 libxss1 libappindicator1 libindicator7 fonts-liberation xdg-utils
+          sudo apt-get install -y libnss3 libxss1 fonts-liberation xdg-utils libgbm1
       
       - name: Set up JDK 21
         uses: actions/setup-java@v3
