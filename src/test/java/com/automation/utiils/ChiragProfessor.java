@@ -2,10 +2,6 @@ package com.automation.utiils;
 
 public class ChiragProfessor {
     public static void main(String[] args) {
-        System.out.println("Hello Chirag");
+        System.out.println("Hello Class");
     }
-
-
-
-  //  CHIRAG BEST TEACHER AND SENSEI EVER :D
 }
