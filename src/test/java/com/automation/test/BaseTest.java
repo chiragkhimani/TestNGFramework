@@ -37,10 +37,26 @@ public class BaseTest {
         prefs.put("profile.password_manager_leak_detection", false);
 
         options.setExperimentalOption("prefs", prefs);
+        
+        // Add headless mode for CI/CD environments (GitHub Actions)
+        boolean isCI = System.getenv("CI") != null || System.getenv("GITHUB_ACTIONS") != null;
+        if (isCI) {
+            options.addArguments("--headless=new");
+            options.addArguments("--disable-gpu");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--disable-software-rasterizer");
+            options.addArguments("--disable-extensions");
+        } else {
+            // Use maximize for local runs
+            options.addArguments("--start-maximized");
+        }
 
         driver = new ChromeDriver(options);
         driver.get("https://www.saucedemo.com/");
-        driver.manage().window().maximize();
+        if (!isCI) {
+            driver.manage().window().maximize();
+        }
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         
         loginPage = new LoginPage(driver);
